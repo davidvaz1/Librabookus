@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&family=Patrick+Hand&display=swap"
+      rel="stylesheet">
+    <style>
+    body {
+            background-color:#FCE18A;
+            text-align:center;
+        }
+        h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size:5em;
+        }
+        h3, h2 {
+            font-family: 'M PLUS 1 Code', sans-serif;
+            font-size:2em;
+        }
+
+        label {
+            font-size:1em;
+            font-family: 'Merriweather', serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Librabookus</h1>
+<h3>A library for your dear books</h3>
+<hr>
+    <form action="{{ url_for('add') }}" method="POST">
+        <label>Book Name</label><br>
+        <input name="title" type="text"><br><br>
+        <label>Book Author</label><br>
+        <input name="author" type="text"><br><br>
+        <label>Rating</label><br>
+        <input name="rating" type="text"><br><label>1 to 10 | 1 worst, 10 best</label><br><br>
+        <button type="submit">Add Book</button>
+    </form>
+    <script>
+        function goback() {
+            window.alert("You have submitted your book. Click OK to go back to the homepage.")
+            window.history.go(-1)
+        }
+    </script>
+</body>
+</html>

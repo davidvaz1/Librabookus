@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Rating</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Merriweather:ital@1&family=Patrick+Hand&display=swap"
+      rel="stylesheet">
+    <style>
+    body {
+            background-color:#FCE18A;
+            text-align:center;
+        }
+        h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size:5em;
+        }
+        h3, h2 {
+            font-family: 'M PLUS 1 Code', sans-serif;
+            font-size:2em;
+        }
+        p {
+            font-family: 'Merriweather', serif;
+            font-size:1em;
+        }
+    </style>
+</head>
+<body>
+<h1>Librabookus</h1>
+<h3>A library for your dear books</h3>
+<hr>
+     <form action="{{ url_for('edit') }}" method="POST">
+        <p>Book Name: {{book.title}}</p>
+        <p>Current Rating {{book.rating}}</p>
+         <input hidden="hidden" name="id" value="{{book.id}}">
+        <input name="rating" type="text" placeholder="New Rating">
+         <label>1 to 10 | 1 worst, 10 best</label><br><br>
+        <button type="submit">Change Rating</button>
+    </form>
+</body>
+</html>
